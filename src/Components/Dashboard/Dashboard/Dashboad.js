@@ -21,17 +21,16 @@ const Dashboad = () => {
   const history = useHistory()
 console.log(admin)
     const [style,setStyle] = useState("block")
-    const [openStyle,setOpenStyle]=useState(null)
-    const [closeStyle,setCloseStyle]=useState(null)
+
     const w3_open =()=> {
         setStyle("block") 
-        setOpenStyle("openStyle")
+      
     
       }
       
     const  w3_close = ()=> {
         setStyle("none")
-        setCloseStyle("setCloseStyle")
+       
       
       }
       let { path, url } = useRouteMatch();
@@ -41,13 +40,17 @@ console.log(admin)
             
 {/* <!-- Sidebar -->  */ }
 
-<div className={`w3-sidebar w3-bar-block w3-collapse w3-teal {}  w3-card w3-animate-left ${openStyle} ${closeStyle} `} style={{width:"250px",display:`${style}`}} id="mySidebar">
+<div className={`w3-sidebar w3-bar-block w3-collapse w3-teal {}  w3-card w3-animate-left  `} style={{width:"250px",display:`${style}`}} id="mySidebar">
 <div className="">
   <img src="https://i.pinimg.com/originals/14/6e/51/146e518769e1a7de395d05d71de51eb7.jpg" width="250px" height="80px" alt="" />
   </div>
 
   <button className="w3-bar-item w3-button w3-large text-danger  w3-hide-large" onClick={w3_close}>Close &times;</button>
   {/* for Addming */}
+
+  <div>
+    <img src={user.photoURL} style={{borderRadius:"50%"}} alt="" />
+  </div>
 {
   admin?
   <div className="mt-5 pt-5 text-center">

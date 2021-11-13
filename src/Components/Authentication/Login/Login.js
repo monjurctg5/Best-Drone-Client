@@ -15,10 +15,10 @@ const Login = () => {
     const history = useHistory()
     const location = useLocation()
 
-    const {style,w3_close,w3_open}=useAuth()
-   
+    const { style, w3_close, w3_open } = useAuth()
+
     const redirec_uri = location.state?.from || "/"
-    const close=()=>{
+    const close = () => {
         w3_close()
         history.push("/")
     }
@@ -66,23 +66,22 @@ const Login = () => {
                                 />
                                 <button className="w3-button w3-block w3-green w3-section w3-padding" type="submit" >Login</button>
                             </div>
+                            <div className=" text-center mb-2   ">-----------------OR-----------------</div>
+                            <button className="w3-button google w3-block   shadow-lg mb-2 text-center" onClick={googleSignIn}><i className="fa fa-google fa-fw">
+                        </i> Login with Google+
+                        </button>
 
                         </form>
-                        <button  class="google w3-button w3-block   w3-section w3-padding" onClick={googleSignIn}><i class="fa fa-google fa-fw">
-                        
-          </i> Login with Google+
-        </button>
-
                         <div className="w3-container w3-border-top w3-padding-16 w3-light-grey">
                             <button onClick={close} type="button" className="w3-button w3-red">Cancel</button>
-                            <span className="w3-right w3-padding w3-hide-small">Not Registered?   <Link onClick={w3_open}  className="w3-right w3-hide-small " to="registation">Signup
-                        </Link></span>
+                            <span className="w3-right w3-padding w3-hide-small">Not Registered?   <Link onClick={w3_open} className="w3-right w3-hide-small " to="registation">Signup
+                            </Link></span>
                         </div>
 
                     </div>
                 </div>
             </div>
-       
+
         </div>
 
     );
