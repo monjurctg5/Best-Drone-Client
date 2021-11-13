@@ -1,0 +1,25 @@
+.text-Align{
+    text-align: left !important;
+}
+
+/* .logo{
+    background-image: url("https://i.pinimg.com/originals/14/6e/51/146e518769e1a7de395d05d71de51eb7.jpg");
+    height: 100px;
+    width: 250px;
+} */
+
+.review-container{
+    width: 50%;
+    margin: 0 auto;
+}
+
+@media (max-width:700px){
+    .review-container{
+        width: 100%;
+    }
+    .openStyle{
+        width: 150px !important;
+    
+    }
+
+}

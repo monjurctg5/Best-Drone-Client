@@ -1,0 +1,28 @@
+
+.order-box{
+    background-color: rgb(233, 236, 240);
+}
+.Order-container{
+    width: 80%;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    box-shadow: 15px 10px 10px rgb(0, 0, 0,0.5);
+    margin: 0 auto;
+    margin-top: 40px;
+
+}
+.bg-image{
+   background-color: rgb(57, 60, 68)
+}
+
+
+.Event-container, input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}

@@ -1,0 +1,30 @@
+/* .service-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.card-custom{
+    width: 30%;
+}
+.card-custom img{
+    width: 100%;
+} */
+
+
+.service-card-custom  img{
+    height: 200px;
+    transition: transform 1.5s;
+}
+.service-card-custom:hover img{
+    transform: scale(1.03)
+}
+
+
+.top-destination{
+    margin-top: 20px;
+}
+.top-destination h1{ 
+    color: #005B21;
+}
