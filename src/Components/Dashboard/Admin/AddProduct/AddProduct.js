@@ -26,7 +26,7 @@ const AddProduct = () => {
     }
     return (
         <div className="addservice-container bg-image">
-            <h3 className="mt-5 fw-bold  text-success">Add  Services</h3>
+            <h3 className="mt-5 fw-bold  text-success">Add  Products</h3>
             <div className="Event-container">
 
                 <form onSubmit={handleSubmit(onSubmit)} className="mb-5">

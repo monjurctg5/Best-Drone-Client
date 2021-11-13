@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-
+import swal from 'sweetalert';
 const MakeAdmin = () => {
     const [adminEmail, setAdminEmail] = useState('')
     const hanldeEmail = (e) => {
         e.preventDefault()
         setAdminEmail(e.target.value)
+        e.target.value=""
 
     }
     const handlSubmit = (e) => {
@@ -14,6 +15,16 @@ const MakeAdmin = () => {
             headers: { "content-type": "application/json" },
             body: JSON.stringify(user)
 
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.acknowledged){
+                swal({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    icon: "success",
+                });
+            }
         })
         e.preventDefault()
     }

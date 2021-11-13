@@ -16,6 +16,7 @@ import MyOrders from '../Client/MyOrders/MyOrders';
 import { useHistory } from "react-router";
 import Review from '../Client/Review/Review';
 import ManageProducts from '../Admin/ManageProducts/ManageProducts';
+import Pay from '../Client/Pay/Pay';
 const Dashboad = () => {
   const {user,admin,Logout} = useAuth()
   const history = useHistory()
@@ -49,7 +50,7 @@ console.log(admin)
   {/* for Addming */}
 
   <div>
-    <img src={user.photoURL} style={{borderRadius:"50%"}} alt="" />
+    <img src={user.photoURL} style={{borderRadius:"50%",height:"100px",width:"100px"}} alt="" />
   </div>
 {
   admin?
@@ -58,12 +59,15 @@ console.log(admin)
   <Link to={`${url}/makeAdmin` }  onClick={w3_close} className="w3-bar-item w3-button">Make Admin</Link>
   <Link to={`${url}/manageOrder`} onClick={w3_close} className="w3-bar-item w3-button">Manage Order</Link>
   <Link to={`${url}/manageProducts`} onClick={w3_close} className="w3-bar-item w3-button">Manage Products</Link>
-  <button onClick={()=>Logout(history)}>Logout</button>
+
+<button className="w3-button w3-bar-item " onClick={()=>Logout(history)}>   <i class="fas fa-sign-out-al t"></i>  Logout</button>
+ 
 </div>:<div>
 <Link to={`${url}/myOrders`}  onClick={w3_close} className="w3-bar-item w3-button">My Order</Link>
+<Link to={`${url}/pay`}  onClick={w3_close} className="w3-bar-item w3-button">Pay</Link>
 <Link to={`${url}/review`} onClick={w3_close} className="w3-bar-item w3-button">Review</Link>
 
-<button onClick={()=>Logout(history)}>Logout</button>
+<button className=" text-danger " onClick={()=>Logout(history)}>   <i class="fas fa-sign-out-al t"></i>  Logout</button>
 </div>
 }
 </div>
@@ -99,6 +103,9 @@ console.log(admin)
           </Route>
           <Route path={`${path}/manageProducts`}>
             <ManageProducts></ManageProducts>
+          </Route>
+          <Route path={`${path}/pay`}>
+            <Pay></Pay>
           </Route>
   </Switch>
 </div>

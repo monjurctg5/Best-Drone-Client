@@ -29,8 +29,6 @@ const CustomerReview = () => {
 
                                         <RatingView ratingValue={review.rating} /* RatingView Props */ />
                                         <h1>{review.displayName}</h1>
-                                        <p>Architect & Engineer</p>
-                                        <p>{review.email}</p>
                                     </div>
                                 </div>
                             </div>
