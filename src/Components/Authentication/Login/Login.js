@@ -64,14 +64,15 @@ const Login = () => {
                                 <input className="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required
                                     {...register("password")}
                                 />
-                                <button className="w3-button w3-block w3-green w3-section w3-padding" type="submit" >Login</button>
+                                <button className="w3-button w3-block w3-green w3-section w3-padding" type="submit" ><i class="fas fa-user"></i>  Login</button>
                             </div>
-                            <div className=" text-center mb-2   ">-----------------OR-----------------</div>
-                            <button className="w3-button google w3-block   shadow-lg mb-2 text-center" onClick={googleSignIn}><i className="fa fa-google fa-fw">
+                           
+                           
+                        </form>
+                        <div className=" text-center mb-2   ">-----------------OR-----------------</div>
+                        <button className=" w3-button google w3-block   shadow-lg mb-2 text-center" onClick={googleSignIn}><i className="fa fa-google fa-fw">
                         </i> Login with Google+
                         </button>
-
-                        </form>
                         <div className="w3-container w3-border-top w3-padding-16 w3-light-grey">
                             <button onClick={close} type="button" className="w3-button w3-red">Cancel</button>
                             <span className="w3-right w3-padding w3-hide-small">Not Registered?   <Link onClick={w3_open} className="w3-right w3-hide-small " to="registation">Signup

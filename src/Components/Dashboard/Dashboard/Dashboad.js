@@ -60,7 +60,7 @@ console.log(admin)
   <Link to={`${url}/manageOrder`} onClick={w3_close} className="w3-bar-item w3-button">Manage Order</Link>
   <Link to={`${url}/manageProducts`} onClick={w3_close} className="w3-bar-item w3-button">Manage Products</Link>
 
-<button className="w3-button w3-bar-item " onClick={()=>Logout(history)}>   <i class="fas fa-sign-out-al t"></i>  Logout</button>
+<button className="w3-button w3-bar-item " onClick={()=>Logout(history)}>   <i class="fas fa-sign-out-alt"></i>  Logout</button>
  
 </div>:<div>
 <Link to={`${url}/myOrders`}  onClick={w3_close} className="w3-bar-item w3-button">My Order</Link>

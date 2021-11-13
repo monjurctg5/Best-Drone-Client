@@ -12,7 +12,7 @@ const Nav = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">Navbar</Link>
+                <Link className="navbar-brand" to="/">Best-Drone</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -53,12 +53,12 @@ const Nav = () => {
                                 <>
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/registation">
-                                            <button onClick={w3_open} className="w3-button w3-green w3-large">Register</button>
+                                            <button onClick={w3_open} className="w3-button w3-green w3-large"> <i class="fas fa-user-plus"></i> Register</button>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/login">
-                                            <button onClick={w3_open} className="w3-button w3-green w3-large">Login</button>
+                                            <button onClick={w3_open} className="w3-button w3-green w3-large"> <i class="fas fa-sign-in-alt"></i>  Login</button>
                                         </Link>
                                     </li>
 
