@@ -15,6 +15,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Dashboad from './Components/Dashboard/Dashboard/Dashboad';
 import PlaceORder from './Components/PlaceOrder/PlaceORder';
 import Services from './Components/Services/Services';
+import NotWork from './Components/Shared/NotWork/NotWork';
 
 
 function App() {
@@ -44,7 +45,9 @@ function App() {
             <Route path="/allProducts">
               <Services></Services>
             </Route>
-
+            <Route path="*">
+              <NotWork></NotWork>
+            </Route>
           </Switch>
           
         </Router>

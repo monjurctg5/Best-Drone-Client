@@ -5,3 +5,39 @@
 .card-custom:hover img{
     transform: scale(1.03)
 }
+.location-container{
+    box-shadow: 8px 7px  20px gray;
+    background: url("https://previews.123rf.com/images/peshkov/peshkov1904/peshkov190400595/120797583-glowing-night-city-with-map-location-pins-social-network-and-technology-concept-double-exposure.jpg");
+    background-size: 100%;
+    background-color: rgba(39, 46, 54, 0.9);
+    background-blend-mode: darken, luminosity;
+ 
+    
+}
+.location-container  img{
+
+    width: 200px;
+    
+}
+.adress-container{
+    width: 50%;
+    margin: 0 auto;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.experience{
+    margin-top: 50px;
+}
+.experience h1{ 
+    color: #005B21;
+}
+
+.icon{
+    color: gold;
+    font-size: 40px;
+}
+

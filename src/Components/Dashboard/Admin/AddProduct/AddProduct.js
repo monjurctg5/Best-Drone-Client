@@ -20,7 +20,7 @@ const AddProduct = () => {
                         text: "You clicked the button!",
                         icon: "success",
                     });
-                    // reset()
+                    reset()
                 }
             })
     }

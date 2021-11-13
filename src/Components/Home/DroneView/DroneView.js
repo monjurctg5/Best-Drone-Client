@@ -19,14 +19,14 @@ const DroneView = () => {
                 </div>
                 <div className="col">
                     <div className="card-custom">
-                        <img src="https://content.thriveglobal.com/wp-content/uploads/2021/08/traveling-is-good-for-your-mental-health.jpg?w=1180" className="card-img-top" alt="..." />
+                        <img src="https://thumbs.dreamstime.com/b/winding-road-all-four-seasons-aerial-view-curved-highway-trough-forest-composite-drone-roadway-weather-image-hairpin-137572256.jpg" className="card-img-top" alt="..." />
 
                     </div>
                 </div>
                 <div className="col">
                     <div className="card-custom">
 
-                        <img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fnomanazish%2Ffiles%2F2018%2F01%2Ftravel-1749508_1280-1200x766.jpg" className="card-img-top" alt="..." />
+                        <img src="https://c4.wallpaperflare.com/wallpaper/773/484/980/drone-photography-ocean-sea-drone-view-wallpaper-preview.jpg" className="card-img-top" alt="..." />
 
                     </div>
                 </div>
