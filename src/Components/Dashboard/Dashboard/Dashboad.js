@@ -15,6 +15,7 @@ import Footer from '../../Shared/Footer/Footer';
 import MyOrders from '../Client/MyOrders/MyOrders';
 import { useHistory } from "react-router";
 import Review from '../Client/Review/Review';
+import ManageProducts from '../Admin/ManageProducts/ManageProducts';
 const Dashboad = () => {
   const {user,admin,Logout} = useAuth()
   const history = useHistory()
@@ -53,6 +54,7 @@ console.log(admin)
 <Link to={`${url}/addProduct`} onClick={w3_close} className="w3-bar-item w3-button">Add Product</Link>
   <Link to={`${url}/makeAdmin` }  onClick={w3_close} className="w3-bar-item w3-button">Make Admin</Link>
   <Link to={`${url}/manageOrder`} onClick={w3_close} className="w3-bar-item w3-button">Manage Order</Link>
+  <Link to={`${url}/manageProducts`} onClick={w3_close} className="w3-bar-item w3-button">Manage Products</Link>
   <button onClick={()=>Logout(history)}>Logout</button>
 </div>:<div>
 <Link to={`${url}/myOrders`}  onClick={w3_close} className="w3-bar-item w3-button">My Order</Link>
@@ -91,6 +93,9 @@ console.log(admin)
           </Route>
           <Route path={`${path}/review`}>
             <Review></Review>
+          </Route>
+          <Route path={`${path}/manageProducts`}>
+            <ManageProducts></ManageProducts>
           </Route>
   </Switch>
 </div>

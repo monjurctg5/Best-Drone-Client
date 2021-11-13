@@ -5,7 +5,7 @@ import swal from 'sweetalert';
 const ManageOrders = () => {
     const [orders, setOrders] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://hidden-inlet-96106.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
 
@@ -20,7 +20,7 @@ const ManageOrders = () => {
         })
             .then((approved) => {
                 if (approved) {
-                    fetch(`http://localhost:5000/orders/${id}`, { method: "PUT" })
+                    fetch(`https://hidden-inlet-96106.herokuapp.com/orders/${id}`, { method: "PUT" })
                         .then(res => res.json())
                         .then(data => {
                             if (data.modifiedCount > 0) {
@@ -46,7 +46,7 @@ const ManageOrders = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/orders/${id}`, { method: "delete" })
+                    fetch(`https://hidden-inlet-96106.herokuapp.com/orders/${id}`, { method: "delete" })
                         .then(res => res.json())
                         .then(data => {
                             if (data.deletedCount) {

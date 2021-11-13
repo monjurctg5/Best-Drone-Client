@@ -19,13 +19,13 @@ const Nav = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link" to="home">
+                            <Link className="nav-link" to="/home">
                                 <button className="w3-button w3-green w3-large">Home</button>
                             </Link>
                         </li>
 
                         <li className="nav-item">
-                            <Link className="nav-link" to="allProducts">
+                            <Link className="nav-link" to="/allProducts">
                                 <button className="w3-button w3-green w3-large">All Products</button>
                             </Link>
                         </li>
@@ -34,7 +34,7 @@ const Nav = () => {
                             user?.email ?
                                 <>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="dashboard">
+                                        <Link className="nav-link" to="/dashboard">
                                             <button className="w3-button w3-green w3-large">Dash Board</button>
                                         </Link>
                                     </li>
@@ -46,18 +46,18 @@ const Nav = () => {
                                     </li>
                                     
                                     <li className="nav-item">
-                                        <span>{user.displayName}</span>
+                                        <span className="nav-link pt-3 fs-5 text-info" >{user.displayName}</span>
                                     </li>
                                 </> :
 
                                 <>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="registation">
+                                        <Link className="nav-link" to="/registation">
                                             <button onClick={w3_open} className="w3-button w3-green w3-large">Register</button>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="login">
+                                        <Link className="nav-link" to="/login">
                                             <button onClick={w3_open} className="w3-button w3-green w3-large">Login</button>
                                         </Link>
                                     </li>

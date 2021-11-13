@@ -10,7 +10,7 @@ const Services = () => {
     const [products, setProducts] = useState([])
     const { user, isLoading } = useAuth()
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://hidden-inlet-96106.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
@@ -18,39 +18,39 @@ const Services = () => {
     }, [])
     if (isLoading) {
         <Spinner></Spinner>
-       
+
     }
     return (
         <div>
-            <Nav/>
+            <Nav />
             <div className="top-destination" >
                 <h1>Best Drone</h1>
             </div>
             <div className="container text-center">
-            <div className="row  row-cols-sm-1  row-cols-md-2 row-cols-lg-3 g-4 ">
-                {
-                    products.map(product => (
-                        <div className="col" data-aos="fade-up"
-                        data-aos-offset="200"
-                        data-aos-easing="ease-in-sine" >
-                            <div class="card service-card-custom  " style={{ width: "18rem" }}>
-                                <img src={product.img}
-                                    class="card-img-top" height="200px" alt="..." />
-                                <div class="card-body">
-                                    <h5 class="card-title">{product.ServiceName}</h5>
-                                    <p>{product.sortTitle.slice(0, 26)}</p>
-                                    <Link to={`/placeOrder/${product._id}`} class="btn btn-danger"
-                                    >purchase Now
-                                    </Link>
+                <div className="row  row-cols-sm-1  row-cols-md-2 row-cols-lg-3 g-4 ">
+                    {
+                        products.map(product => (
+                            <div className="col" data-aos="fade-up"
+                                data-aos-offset="200"
+                                data-aos-easing="ease-in-sine" >
+                                <div class="card service-card-custom  " style={{ width: "18rem" }}>
+                                    <img src={product.img}
+                                        class="card-img-top" height="200px" alt="..." />
+                                    <div class="card-body">
+                                        <h5 class="card-title">{product.ServiceName}</h5>
+                                        <p>{product.sortTitle.slice(0, 26)}</p>
+                                        <Link to={`/placeOrder/${product._id}`} class="btn btn-danger"
+                                        >purchase Now
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))
-                }
-            </div>
+                        ))
+                    }
+                </div>
             </div>
 
-<Footer></Footer>
+            <Footer></Footer>
         </div>
     );
 };

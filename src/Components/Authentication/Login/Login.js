@@ -24,6 +24,7 @@ const Login = () => {
     }
 
     const onSubmit = data => {
+        setIsLoading(true)
         signIn(data.email, data.password)
             .then(result => {
                 setIsLoading(false)
@@ -33,6 +34,7 @@ const Login = () => {
     };
 
     const googleSignIn = () => {
+        setIsLoading(true)
         signInWithGoogle(history, redirec_uri)
 
     }

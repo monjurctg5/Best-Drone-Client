@@ -20,7 +20,7 @@ const PlaceORder = () => {
     const [product, setProduct] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://hidden-inlet-96106.herokuapp.com/products/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -40,7 +40,7 @@ const PlaceORder = () => {
             approved: false
         }
 
-        fetch(`http://localhost:5000/orders`, {
+        fetch(`https://hidden-inlet-96106.herokuapp.com/orders`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newClientData)
@@ -66,7 +66,7 @@ const PlaceORder = () => {
                                 <div class="card-body">
                                     <h5 class="card-title">{product.productName}</h5>
                                     <p class="card-text">{product.description}</p>
-                                   <h6>{product.price}</h6>
+                                    <h6>{product.price}</h6>
                                 </div>
                             </div>
                         </div>

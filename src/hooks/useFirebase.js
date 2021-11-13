@@ -21,7 +21,7 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [user, setUser] = useState({})
     const [admin, setAdmin] = useState(false)
-    const [error,setError]= useState('')
+    const [error, setError] = useState('')
     const [style, setStyle] = useState("none")
 
 
@@ -29,16 +29,16 @@ const useFirebase = () => {
     const signInWithGoogle = (history, destination) => {
         setIsLoading(true)
         signInWithPopup(auth, googleProvider)
-        .then((result) => {
-            setUser(result.user)
-            saveUser(result.user.email, result.user.displayName, "PUT")
-            history.push(destination)
-            setIsLoading(false)
-            setError("")
-                })
-                .catch(er=>{
-                    console.log(er);
-                })
+            .then((result) => {
+                setUser(result.user)
+                saveUser(result.user.email, result.user.displayName, "PUT")
+                history.push(destination)
+                setIsLoading(false)
+                setError("")
+            })
+            .catch(er => {
+                console.log(er);
+            })
     }
 
     const w3_open = () => {
@@ -59,11 +59,13 @@ const useFirebase = () => {
     //for manulay register
 
     const Register = (email, password) => {
+        setIsLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
 
     }
     //manulay sign in
     const signIn = (email, password) => {
+        setIsLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
 
     }
@@ -100,7 +102,7 @@ const useFirebase = () => {
     const saveUser = (email, displayName, method) => {
 
         const user = { email, displayName }
-        fetch(`http://localhost:5000/users`, {
+        fetch(`https://hidden-inlet-96106.herokuapp.com/users`, {
             method: method,
             headers: { 'content-type': "application/json" },
             body: JSON.stringify(user)
@@ -109,7 +111,7 @@ const useFirebase = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://hidden-inlet-96106.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user?.email])
@@ -127,8 +129,8 @@ const useFirebase = () => {
         isLoading,
         saveUser,
         admin,
-        w3_open ,
-        setStyle,style,w3_close
+        w3_open,
+        setStyle, style, w3_close
 
 
     }

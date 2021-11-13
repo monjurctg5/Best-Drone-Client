@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import reactStars from 'react-rating-stars-component';
+
+import { RatingView } from 'react-simple-star-rating'
 import './CReview.css'
-const alt = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrK_KKylmSo7qaUpnPenSDYwADYFMx8QUkow&usqp=CAU"
 const CustomerReview = () => {
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://hidden-inlet-96106.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
@@ -17,26 +17,20 @@ const CustomerReview = () => {
                 {
                     reviews.map(review =>
                         <div className="col">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <reactStars
-                                            count={review.rating}
-                                            onChange={3}
-                                            size={27}
-                                            isHalf={true}
-                                            emptyIcon={<i className="far fa-star"></i>}
-                                            halfIcon={<i className="fa fa-star-half-alt"></i>}
-                                            fullIcon={<i className="fa fa-star"></i>}
-                                            activeColor="#ffd700"
-                                        />
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <img src={review.img} alt="Avatar" style={{ width: "100px", height: "100px", borderRadius: "50%" }} />
-                                        <h1>John Doe</h1>
+                            <div className="flip-card">
+                                <div className="flip-card-inner">
+                                    <div className="flip-card-front pt-5">
 
+                                        <RatingView ratingValue={review.rating} /* RatingView Props */ />
+                                        <p>{review.review}</p>
+                                    </div>
+                                    <div className="flip-card-back">
+                                        <img src={review.img} alt="Avatar" style={{ width: "100px", height: "100px", borderRadius: "50%" }} /> <br />
+
+                                        <RatingView ratingValue={review.rating} /* RatingView Props */ />
+                                        <h1>{review.displayName}</h1>
                                         <p>Architect & Engineer</p>
-                                        <p>We love that guy</p>
+                                        <p>{review.email}</p>
                                     </div>
                                 </div>
                             </div>
