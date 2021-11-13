@@ -5,10 +5,11 @@ import useAuth from '../../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
 import Spinner from '../../Shared/Spinner/Spinner';
 import Footer from '../../Shared/Footer/Footer';
+import { Link } from 'react-router-dom';
 
 const Registration = () => {
     const { signInWithGoogle, setIsLoading,
-        isLoading, Register, updateName, saveUser, w3_close,style } = useAuth()
+        isLoading, Register, updateName, saveUser, w3_close,style,w3_open } = useAuth()
     const { register, handleSubmit } = useForm();
     const history = useHistory()
     const location = useLocation()
@@ -65,10 +66,10 @@ const Registration = () => {
                                 <input className="w3-check w3-margin-top" type="checkbox" checked="checked" /> Remember me
                             </div>
                         </form>
-
                         <div className="w3-container w3-border-top w3-padding-16 w3-light-grey">
                             <button onClick={close} type="button" className="w3-button w3-red">Cancel</button>
-                            <span className="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+                            <span className="w3-right w3-padding w3-hide-small">Alredy Registered?   <Link onClick={w3_open} className="w3-right w3-hide-small " to="/login">Login
+                            </Link></span>
                         </div>
 
                     </div>
