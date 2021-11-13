@@ -55,7 +55,7 @@ console.log(admin)
 {
   admin?
   <div className="mt-5 pt-5 text-center">
-<Link to={`${url}/addProduct`} onClick={w3_close} className="w3-bar-item w3-button">Add Product</Link>
+<Link to={`${url}/addProduct`} onClick={w3_close} className="w3-bar-item w3-button"><i class="fas fa-home"></i> Add Product</Link>
   <Link to={`${url}/makeAdmin` }  onClick={w3_close} className="w3-bar-item w3-button">Make Admin</Link>
   <Link to={`${url}/manageOrder`} onClick={w3_close} className="w3-bar-item w3-button">Manage Order</Link>
   <Link to={`${url}/manageProducts`} onClick={w3_close} className="w3-bar-item w3-button">Manage Products</Link>
@@ -67,7 +67,7 @@ console.log(admin)
 <Link to={`${url}/pay`}  onClick={w3_close} className="w3-bar-item w3-button">Pay</Link>
 <Link to={`${url}/review`} onClick={w3_close} className="w3-bar-item w3-button">Review</Link>
 
-<button className=" text-danger " onClick={()=>Logout(history)}>   <i class="fas fa-sign-out-al t"></i>  Logout</button>
+<button className=" text-danger " onClick={()=>Logout(history)}>   <i class="fas fa-sign-out-alt"></i>  Logout</button>
 </div>
 }
 </div>
