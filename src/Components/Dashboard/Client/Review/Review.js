@@ -17,9 +17,8 @@ const Review = () => {
     const handleReview=(e)=>{
         const name= user.displayName
         const email = user.email
-
-        const clientReview = {review,rating,name,email}
-        
+        const img= user.photoURL
+        const clientReview = {review,rating,name,email,img}
         console.log(clientReview)
         fetch(`http://localhost:5000/review`,{
             method:"post",

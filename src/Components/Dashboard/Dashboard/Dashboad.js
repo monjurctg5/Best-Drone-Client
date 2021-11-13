@@ -73,11 +73,8 @@ console.log(admin)
     <li className="mx-4 ">
     <h5 className="text-dark ">{user.displayName}</h5>
     </li>
-   
-    
   </div>
 </div>
-
 <div className="w3-container mt-5">
 <Switch>
           <Route  path={`${path}/addProduct`}>
