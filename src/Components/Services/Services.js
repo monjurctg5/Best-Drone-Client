@@ -6,15 +6,17 @@ import Footer from '../Shared/Footer/Footer';
 import Nav from '../Shared/Nav/Nav';
 import Spinner from '../Shared/Spinner/Spinner';
 import './services.css'
+import {api} from '../../Api/Product/productAPi'
 const Services = () => {
     const [products, setProducts] = useState([])
     const { user, isLoading } = useAuth()
-    useEffect(() => {
-        fetch('https://hidden-inlet-96106.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-            })
+    useEffect(async() => {
+        let res = await api.allProducts()
+        console.log(res.data)
+        if(res.data){   
+            setProducts(res.data)
+        }
+        
     }, [])
     if (isLoading) {
         <Spinner></Spinner>
@@ -38,7 +40,7 @@ const Services = () => {
                                         class="card-img-top" height="200px" alt="..." />
                                     <div class="card-body">
                                         <h5 class="card-title">{product.ServiceName}</h5>
-                                        <p>{product.sortTitle.slice(0, 26)}</p>
+                                        <p>{product.sortTitle}</p>
                                         <Link to={`/placeOrder/${product._id}`} class="btn btn-danger"
                                         >purchase Now
                                         </Link>

@@ -3,19 +3,28 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Spinner from '../../Shared/Spinner/Spinner';
+import {api} from '../../../Api/Product/productAPi'
 // import useAuth from '../../hooks/useAuth';
 import AOS from 'aos';
 AOS.init();
 
-const ServicePart = () => {
+const ServicePart =  () => {
+    console.log(api)
     const [products, setProducts] = useState([])
     const { user, isLoading } = useAuth()
-    useEffect(() => {
-        fetch('https://hidden-inlet-96106.herokuapp.com/products/home')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-            })
+    useEffect(async () => {
+        let res = await api.homeProducts()
+        console.log(res.data)
+        if(res.data){   
+            setProducts(res.data)
+        }
+        
+
+        // fetch(`https://hidden-inlet-96106.herokuapp.com/products/home`)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setProducts(data)
+        //     })
     }, [])
     if (isLoading) {
         <Spinner></Spinner>

@@ -1,8 +1,12 @@
-.modal-text{
-    text-align: left !important;
+.modal-text {
+  text-align: left !important;
 }
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
 
 .input-container {
   display: -ms-flexbox; /* IE10 */
@@ -17,6 +21,44 @@ body {font-family: Arial, Helvetica, sans-serif;}
   color: white;
   min-width: 50px;
   text-align: center;
+}
+.login-input {
+  margin-top: 10px;
+  text-align: center;
+}
+.login-input h3 {
+  width: 50%;
+  margin: 0 auto;
+  padding: 5px;
+  text-align: center;
+  color: #dd4e5d;
+}
+.login-input input {
+  margin-top: 30px !important;
+  width: 100% !important;
+  padding: 15px !important;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 2px solid #dd4b39;
+
+  outline: none;
+}
+.login-input .input-submit{
+  background-color: #cf5e6a;
+  width: 50% !important;
+  padding: 10px !important;
+}
+.google-btn {
+  padding: 10px;
+  border: none;
+  background-color: #fff;
+  box-shadow: 5px 0px 5px gray;
+  border-radius: 10px;
+}
+.close-btn {
+  background-color: #cf5e6a;
+  padding: 4px;
+  
 }
 
 .input-field {
@@ -43,10 +85,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .btn:hover {
   opacity: 1;
 }
-.link{
+.link {
   cursor: pointer;
   text-decoration: underline;
-  
 }
 .google {
   background-color: #dd4b39;

@@ -20,7 +20,7 @@ import NotWork from './Components/Shared/NotWork/NotWork';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App main">
       <AuthProvider>
         <Router>
           <Switch>

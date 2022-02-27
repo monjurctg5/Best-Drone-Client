@@ -1,3 +1,4 @@
+import { async } from '@firebase/util';
 import React, { useEffect, useState } from 'react';
 // import { Spinner } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
@@ -5,6 +6,7 @@ import { useHistory } from 'react-router';
 
 // import "../updateForm/update.css"
 import swal from 'sweetalert';
+import { api } from '../../../../Api/Product/productAPi';
 import useAuth from '../../../../hooks/useAuth';
 import Spinner from '../../../Shared/Spinner/Spinner';
 
@@ -16,20 +18,20 @@ const ManageProducts = () => {
     const { user, isLoading } = useAuth()
 
 
-    useEffect(() => {
-        fetch('https://hidden-inlet-96106.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-            })
-    }, [products])
+    useEffect(async() => {
+        let res = await api.allProducts()
+        console.log(res.data)
+        if(res.data){   
+            setProducts(res.data)
+        }     
+    }, [])
 
 
 
     if (isLoading) {
         return <Spinner></Spinner>
     }
-    const handleDelete = id => {
+    const handleDelete = async(id) => {
         swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this imaginary file!",
@@ -37,19 +39,18 @@ const ManageProducts = () => {
             buttons: true,
             dangerMode: true,
         })
-            .then((willDelete) => {
+            .then(async(willDelete) => {
                 if (willDelete) {
-                    fetch(`https://hidden-inlet-96106.herokuapp.com/products/${id}`, { method: "delete" }).then(res => res.json())
-                        .then(data => {
-                            if (data.deletedCount > 0) {
-                                swal("delete successfully!", {
-                                    icon: "success",
-                                });
+                    let data = await api.deleteProduct(id)
+                   console.log(data)
+                    if (data.deletedCount > 0) {
+                        swal("delete successfully!", {
+                            icon: "success",
+                        });
 
-                                const remaingServices = products.filter(service => service._id !== id)
-                                setProducts(remaingServices)
-                            }
-                        })
+                        const remaingServices =await products.filter(service => service._id !== id)
+                        setProducts(remaingServices)
+                    }
 
                 } else {
                     swal("Not Deleteded!");

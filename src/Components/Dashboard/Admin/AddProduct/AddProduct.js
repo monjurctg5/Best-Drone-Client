@@ -5,24 +5,23 @@ import React, { useState } from 'react';
 import swal from 'sweetalert';
 import './Addproduct.css'
 import { useForm } from "react-hook-form";
+import { api } from '../../../../Api/Product/productAPi';
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
-    const onSubmit = (data) => {
-        fetch(`https://hidden-inlet-96106.herokuapp.com/products`, {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        }).then(res => res.json())
-            .then(data => {
-                if (data.acknowledged) {
-                    swal({
-                        title: "Good job!",
-                        text: "You clicked the button!",
-                        icon: "success",
-                    });
-                    reset()
-                }
-            })
+    const onSubmit = async (data) => {
+        const res = await api.addproduct(data)
+        if (res.status==="ok") {
+            swal({
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success",
+            });
+            reset()
+        }
+        
+
+
+      
     }
     return (
         <div className="addservice-container bg-image">
@@ -32,7 +31,7 @@ const AddProduct = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="mb-5">
                     <input required {...register("productName")} placeholder=" Product Name" />
                     <input required {...register("sortTitle")} placeholder="sort title" />
-                    <textarea required {...register("description")} placeholder="Descriptio" />
+                    <textarea required {...register("description")} placeholder="Description" />
                     <input  {...register("price")} placeholder="  price " /> <br />
                     <input  {...register("img")} placeholder=" Product image url" /> <br />
                     <input type="submit" />
